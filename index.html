@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Intake Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Demo intake flow</p>
+      <h1>Submit your details to continue.</h1>
+      <p class="lede">Enter the requested information, then submit to move to the logged-in page. This demo keeps the data in your browser session only.</p>
+    </section>
+
+    <section class="card">
+      <form id="intake-form" novalidate>
+        <div class="grid">
+          <label>
+            <span>First name</span>
+            <input type="text" name="firstName" autocomplete="given-name" required>
+          </label>
+          <label>
+            <span>Last name</span>
+            <input type="text" name="lastName" autocomplete="family-name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            <span>Phone number</span>
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label>
+            <span>Last 4 of SSN</span>
+            <input type="text" name="ssnLast4" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" required>
+          </label>
+          <label>
+            <span>Address</span>
+            <input type="text" name="address" autocomplete="street-address" required>
+          </label>
+          <label>
+            <span>City</span>
+            <input type="text" name="city" autocomplete="address-level2" required>
+          </label>
+          <label>
+            <span>State</span>
+            <input type="text" name="state" autocomplete="address-level1" maxlength="2" required>
+          </label>
+        </div>
+
+        <p class="hint">Use any values for testing. The next page will show the name you submitted.</p>
+        <p class="error" id="form-error" aria-live="polite"></p>
+
+        <button type="submit" class="submit-btn">Submit and continue</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

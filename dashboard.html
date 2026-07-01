@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logged In</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="shell shell--centered">
+    <section class="card card--dashboard">
+      <p class="eyebrow">Authenticated session</p>
+      <h1>You are logged in.</h1>
+      <p class="lede" id="welcome-copy">Loading your session details...</p>
+
+      <div class="details" id="user-details" hidden>
+        <div><span>Name</span><strong id="full-name"></strong></div>
+        <div><span>Email</span><strong id="email"></strong></div>
+        <div><span>Phone</span><strong id="phone"></strong></div>
+        <div><span>Address</span><strong id="address"></strong></div>
+      </div>
+
+      <a class="secondary-link" href="index.html">Start over</a>
+    </section>
+  </main>
+</body>
+</html>
