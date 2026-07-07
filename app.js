@@ -68,7 +68,7 @@ function setupFormPage() {
 
     const formData = new FormData(form);
     const firstName = String(formData.get("firstName") || "").trim();
-    const lastName = String(formData.get("lastName") || "").trim();
+    const middleName = String(formData.get("middleName") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const phone = formatPhone(String(formData.get("phone") || ""));
     const ssnLast4 = String(formData.get("ssnLast4") || "").replace(/\D/g, "").slice(0, 4);
@@ -76,7 +76,7 @@ function setupFormPage() {
     const city = String(formData.get("city") || "").trim();
     const state = formatState(String(formData.get("state") || ""));
 
-    const invalidFields = [firstName, lastName, email, phone, ssnLast4, address, city, state].some((value) => !value);
+    const invalidFields = [firstName, middleName, email, phone, ssnLast4, address, city, state].some((value) => !value);
     if (invalidFields || ssnLast4.length !== 4) {
       error.textContent = "Please fill in every field, including a 4-digit SSN last-4.";
       return;
@@ -84,7 +84,7 @@ function setupFormPage() {
 
     saveUserData({
       firstName,
-      lastName,
+      middleName,
       email,
       phone,
       ssnLast4: maskSsn(ssnLast4),
@@ -115,7 +115,7 @@ function setupDashboardPage() {
   }
 
   welcomeCopy.textContent = `Welcome back, ${user.firstName}. Your session is active.`;
-  fullName.textContent = `${user.firstName} ${user.lastName}`;
+  fullName.textContent = `${user.firstName} ${user.middleName}`;
   email.textContent = user.email;
   phone.textContent = user.phone;
   address.textContent = `${user.address}, ${user.city}, ${user.state}`;
